@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC - AGRO Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@700&family=Poppins:wght@300;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMSU2SU+P6P10C41hzqkekD/xA7DytXh7J23DgP" crossorigin="anonymous">
+     <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+<!-- FOOTER CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cambria Math', 'Cambria', serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color:#fdffff;
+            
+        }
+
+    /* Ensure the hero section is full-screen */
+    header {
+    display: flex;
+    font-family: 'Cambria Math', 'Cambria', serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #faf9f9;
+    color: rgb(11, 11, 11);
+   
+    z-index: 10;
+}
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.9em;
+    font-family: 'Cambria Math', 'Cambria', serif;
+    color: #080808;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo h1 i {
+    margin-right: 10px;
+    font-size: 2.5em;
+    animation: bounce 1s infinite;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(1, 10, 75);
+    font-family: 'Cambria Math', 'Cambria', serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fafafb;
+    background: rgba(4, 6, 159, 0.1);
+    transform: scale(1.1);
+}
+
+nav ul li a:hover i {
+    color: #000660;
+    transform: scale(1.3);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgb(255, 253, 253);
+    z-index: 1;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #031232;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #02152d;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Full height */
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section */
+    z-index: -1; /* Place video behind content */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(248, 248, 248);
+    z-index: 1;
+}
+
+.hero-title {
+    position: relative;
+    font-size: 7em; /* Adjust as needed */
+    margin: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Cambria Math', 'Cambria', serif;
+    overflow: hidden;
+    display: inline-block;
+    background: linear-gradient(70deg, #f3f3f3 0%, #08027a 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 15px rgba(7, 3, 69, 0.6);
+    animation: titleEntrance 2s ease-out forwards, subtleRotate 5s ease-in-out infinite;
+}
+
+/* Dynamic Entrance Animation */
+@keyframes titleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+/* Subtle Rotate and Scale Animation */
+@keyframes subtleRotate {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.02) rotate(1deg);
+    }
+}
+
+.hero-subtitle {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+    color: #fff;
+    opacity: 0;
+    animation: subtitleEntrance 2.5s ease-out 1s forwards;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 5px rgba(1, 5, 35, 0.8);
+}
+
+/* Subtitle Entrance Animation */
+@keyframes subtitleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-button {
+    padding: 0.8em 2.5em;
+    font-family: 'Cambria Math', 'Cambria', serif;
+    background: linear-gradient(135deg, #000, #222); /* Darker gradient */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 2px solid transparent;
+    margin-top: 20px;
+    opacity: 0;
+    animation: buttonFadeIn 3.5s ease-out forwards;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase; /* Added to match title's uppercase style */
+    letter-spacing: 0.1em; /* Added for consistent spacing */
+}
+
+.hero-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(2, 61, 37, 0.3) 0%, rgba(255, 255, 255, 0) 60%);
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 0.3s ease-out;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-button:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hero-button:hover {
+    background: linear-gradient(135deg, #333, #555); /* Dark gray gradient on hover */
+    color: #fff;
+    transform: scale(1.1); /* Slightly larger scale on hover */
+    border: 2px solid #fff;
+    box-shadow: 0 12px 24px rgb(255, 253, 253);
+}
+
+.hero-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.hero-button:hover:after {
+    opacity: 1;
+}
+
+@keyframes buttonFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Section Title Styles */
+.section-title {
+  font-family: 'Cambria Math', 'Cambria', serif;
+  font-size: 2.4em;
+  font-weight: bold;
+  color: #ffffff; /* Change the color to your desired color */
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #0a0143;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+.section-title:hover {
+  color: #0069d9; /* Change the color to your desired hover color */
+}
+.section-title:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.section-title.wow.animate__animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+
+
+.about-us {
+    font-family: 'Cambria Math', 'Cambria', serif;
+    color: #000000;
+    background-color: #08062e;
+    padding: 40px 0;
+    text-align: center;
+      
+}
+
+.about-us-intro {
+    font-family: 'Cambria Math', 'Cambria', serif;
+    font-size: 1.1rem;
+    color: #fff9f9;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #0298d1;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #01579b;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us-intro {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+/* Section Styles */
+#premium-products {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #10100f, #161071);
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+
+#premium-products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 120%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.998);
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+#premium-products h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #000000;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.product-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    animation: slideUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.button {
+    display: inline-block;
+    font-family: 'Cambria Math', 'Cambria', serif;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #e2dcde;
+    background: linear-gradient(135deg, #150263, #1a317f);
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(233, 232, 232, 0.834);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280%;
+    height: 280%;
+    background: rgba(169, 165, 165, 0.15);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #095e93, #07706f);
+    transform: translateY(-4px);
+    
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#food-machineries h2, #irrigation h2, #canned-fish h2 {
+  color: #041c37; /* Change the color to your desired color */
+  font-size: 2.8em; /* Increased font size */
+  letter-spacing: 1px; /* Added letter spacing */
+  text-transform: uppercase; /* Changed text to uppercase */
+  margin-bottom: 10px; /* Added margin bottom */
+  padding: 10px; /* Added padding */
+  border-bottom: 2px solid #010182; /* Added border bottom */
+  animation: fadeIn 1s ease-out forwards; /* Added animation */
+  opacity: 0; /* Initial opacity */
+}
+
+/* Horizontal Section Styles */
+.horizontal-section {
+    padding: 20px 0;
+    background-color: #16204a;
+    
+    
+}
+
+.horizontal-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.service, .irrigation-item {
+    flex: 1 1 280px;
+    background-color: #ffffff;
+    border: 1px solid #08023f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(3, 10, 109);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    position: relative;
+    margin: 10px;
+    
+}
+
+.service:hover, .irrigation-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(3, 1, 56, 0.2);
+    border-color: #03088f;
+}
+
+.service-img-wrapper, .irrigation-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid #010182;
+}
+
+.service-img, .irrigation-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.service-img:hover, .irrigation-img:hover {
+    transform: scale(1.1);
+}
+
+.service-content, .irrigation-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-content h3, .irrigation-content h3 {
+    font-size: 1.5rem;
+    color: #03043f;
+    margin-bottom: 6px;
+}
+
+.service-content p, .irrigation-content p {
+    font-size: 1rem;
+    color: #0e1847;
+    margin-bottom: 6px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0f247f;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #0d20f5;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #133bed;
+}
+
+.btn-secondary:hover {
+    background-color: #061b4b;
+}
+
+/* WOW Animations */
+.wow {
+    visibility: hidden;
+}
+
+.wow.animate__animated {
+    visibility: visible;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .horizontal-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service, .irrigation-item {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+      
+   .call-now-section {
+    text-align: center;
+    background-color: #181b5b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    margin: 20px 0;
+}
+
+.call-now-section h2 {
+    font-size: 2rem;
+    color: #1f145e;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.call-now-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #154e52;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
+.call-now-button:hover {
+    background-color: #1b598c;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(200, 35, 51, 0.5);
+}
+
+.news-ticker-wrapper {
+        background-color: #100b50;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+        border-top: 3px solid #f6f6f6; /* Add a border to enhance visibility */
+    }
+
+    .news-ticker {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    .news-ticker span {
+        display: inline-block;
+        padding: 0 40px; /* Adjust padding for better spacing */
+        font-size: 1rem;
+        color: #fff9f9;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes scroll-left {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .news-ticker span {
+            font-size: 0.9rem; /* Reduce font size on smaller screens */
+        }
+    }
+
+    </style>
+</head>
+<body>
+    
+<div class="news-ticker-wrapper">
+    <div class="news-ticker">
+        <span>Our new product line is launching next month! Stay tuned for more updates.</span>
+        <span>We are expanding our services to new markets! Explore our latest offerings.</span>
+    </div>
+</div>
+ <header>
+    <div class="logo">
+        <img src="https://www.bartleet.com/wp-content/uploads/2022/05/AGRO-002-2048x367.jpg" alt="Your Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="overview.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)"><i class="fas fa-box"></i> Products</a>
+                <div class="dropdown-content">
+                    <a href="meyer.html"><i class="fas fa-cogs"></i> Tea Machineries</a>
+                    <a href="kilburn.html"><i class="fas fa-seedling"></i> Irrigation</a>
+                    <a href="zenith.html"><i class="fas fa-fish"></i> Canned Fish</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)"><i class="fas fa-concierge-bell"></i> Services</a>
+                <div class="dropdown-content">
+                    <a href="Repairs.html"><i class="fas fa-tools"></i> Tea Color Sorter Machine Service</a>
+                    <a href="kilburn.html"><i class="fas fa-wrench"></i> Repair Service</a>
+                    <a href="zenith.html"><i class="fas fa-cogs"></i> Maintenance</a>
+                    <a href="irrigation.html"><i class="fas fa-hand-holding-water"></i> Irrigation Service</a>
+                </div>
+            </li>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+ </style>
+
+
+<section class="hero-video">
+    <video class="hero-video-bg" src="https://cdn.pixabay.com/video/2020/05/04/38048-415950712_tiny.mp4" autoplay muted loop></video>
+    <div class="hero-content">
+        <p class="hero-subtitle">Welcome to BC Agro Tronices! Discover our advanced tea sorting technology for top-quality production.</p>
+        <a href="#premium-products" class="hero-button">Discover More</a> <!-- Updated button class -->
+    </div>
+</section>
+
+<section class="about-us">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="about-us-intro">
+                BC Agro Tronices (Pvt) Ltd. is a leading provider of advanced agricultural technology solutions, specializing in cutting-edge tea color sorting machines, efficient irrigation systems, and innovative canned fish processing equipment. With years of rich experience in the industry, we are committed to enhancing the quality and efficiency of agricultural processes through our state-of-the-art machinery and technology.
+                <br><br>
+                Our team of experts is dedicated to delivering exceptional products and services that meet the highest standards of quality and performance. We work closely with our clients to understand their needs and provide tailored solutions that drive success and growth in their operations. Whether it's improving the sorting and grading of tea, optimizing irrigation systems, or enhancing the processing of canned fish, BC Agro Tronices is at the forefront of agricultural innovation.
+            </p>
+            <a href="overview.html" class="btn btn-primary">See More</a>
+        </div>
+    </section>
+
+
+<section id="premium-products">
+  <h2>Explore Our Premium Products</h2>
+  <div class="product-buttons">
+    <a href="#food-machineries" class="button">Food Machineries</a>
+    <a href="#irrigation" class="button">Irrigation</a>
+    <a href="#canned-fish" class="button">Canned Fish</a>
+  </div>
+</section>
+
+    <!-- Tea Machineries Section -->
+    <section id="food-machineries" class="horizontal-section">
+        <header>
+            <div >
+                <h2>Food Machineries</h2>
+                <div class="underline"></div>
+            </div>
+        </header>
+        <div class="horizontal-wrapper">
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://rice-processing.com/wp-content/uploads/2020/08/Tea-color-sorter.jpg" alt="Meyer Tea Color Sorters" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Meyer Machines</h3>
+                    <p> Our company mainly imports tea color sorters, rice sorters machinery etc. from Meyer Company..</p>
+                    <div class="btn-container">
+                        <a href="meyer.html" class="btn">Learn More</a>
+                        <a href="https://meyerop.com/en/" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.GT144_uxvVl9RvKMYsMjsgHaE6?rs=1&pid=ImgDetMain/358111" alt="Kilburn Tea Dryers" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Kilburn Tea Dryers</h3>
+                    <p>Explore Kilburn's state-of-the-art tea dryers, designed to deliver the perfect drying process every time.</p>
+                    <div class="btn-container">
+                        <a href="kilburn.html" class="btn">Learn More</a>
+                        <a href="https://www.kilburnengg.com" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/R.6e0585f69da5d51d5d9c0c46660a1a49?rik=%2bzd8UhsPueSmig&pid=ImgRaw&r=0/358111" alt="Zenith CTC Machine" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Zenith CTC Machine</h3>
+                    <p>Find out how Zenith's innovative tea dryers can improve the consistency and quality of your tea production.</p>
+                    <div class="btn-container">
+                        <a href="zenith.html" class="btn">Learn More</a>
+                        <a href="https://www.zenithengg.com" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/R.7cc1e3b6e3c058a0769b77f59e484403?rik=bl1D6tZkbcbUhw&pid=ImgRaw&r=0" alt="Multitcell Technology" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Multitcell Technology</h3>
+                    <p>Discover our latest Multitcell technology designed to optimize efficiency and performance in various applications.</p>
+                    <div class="btn-container">
+                        <a href="multitcell.html" class="btn">Learn More</a>
+                        <a href="https://www.example-multitcell.com" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Irrigation Section -->
+    <section id="irrigation" class="horizontal-section">
+        <header>
+            <div class="section">
+                <h2>Innovative Irrigation Solutions</h2>
+                <div class="underline"></div>
+            </div>
+        </header>
+        <div class="horizontal-wrapper">
+            <div class="irrigation-item wow animate__animated animate__fadeIn">
+                <div class="irrigation-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.WB4PW351_gSYgICFTcwkoAHaE8?rs=1&pid=ImgDetMain" alt="Irrigation System 1" class="irrigation-img">
+                </div>
+                <div class="irrigation-content">
+                     <h3> Drip Irrigation Systems</h3>
+                    <p>Our drip irrigation systems ensure precise water delivery to the roots, maximizing efficiency and minimizing waste.</p>
+                    <div class="btn-container">
+                        <a href="drip-irrigation.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/drip-irrigation" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="irrigation-item wow animate__animated animate__fadeIn">
+                <div class="irrigation-img-wrapper">
+                    <img src=https://th.bing.com/th/id/OIP.kRpTXUrsIHC0eaXDchR0dgHaEQ?rs=1&pid=ImgDetMain" alt="Irrigation System 2" class="irrigation-img">
+                </div>
+                <div class="irrigation-content">
+                    <h3>Sprinkler Irrigation Systems</h3>
+                    <p>Explore our advanced sprinkler systems designed for uniform water distribution across large areas.</p>
+                    <div class="btn-container">
+                        <a href="sprinkler-irrigation.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/sprinkler-irrigation" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="irrigation-item wow animate__animated animate__fadeIn">
+                <div class="irrigation-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.rvge05P5s5CPjCoQDK-PnAHaEJ?w=626&h=351&rs=1&pid=ImgDetMain" alt="Irrigation System 3" class="irrigation-img">
+                </div>
+                <div class="irrigation-content">
+                    <h3>Automated Irrigation Controls</h3>
+                    <p>Optimize your irrigation with our automated control systems that allow you to program watering schedules and monitor usage.</p>
+                    <div class="btn-container">
+                        <a href="automated-controls.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/automated-controls" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canned Fish Section -->
+    <section id="canned-fish" class="horizontal-section">
+        <header>
+            <div class="sections">
+                <h2>Premium Canned Fish</h2>
+                <div class="underline"></div>
+            </div>
+        </header>
+        <div class="horizontal-wrapper">
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.H2y5PNmIz3Q5gLC1br0bpQAAAA?rs=1&pid=ImgDetMain" alt="Premium Canned Tuna" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Premium Canned Tuna</h3>
+                    <p>Enjoy the finest quality tuna, carefully packed to ensure freshness and taste. Ideal for a variety of recipes.</p>
+                    <div class="btn-container">
+                        <a href="premium-tuna.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/premium-tuna" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.vFX--ul6OIe4TIqgf8D_UwHaHa?rs=1&pid=ImgDetMain" alt="Canned Salmon" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Canned Salmon</h3>
+                    <p>Our premium canned salmon is rich in flavor and packed with nutrients. Perfect for quick and healthy meals.</p>
+                    <div class="btn-container">
+                        <a href="canned-salmon.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/canned-salmon" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+                
+            </div>
+              <div class="service wow animate__animated animate__fadeIn">
+                <div class="service-img-wrapper">
+                    <img src="https://th.bing.com/th/id/OIP.vFX--ul6OIe4TIqgf8D_UwHaHa?rs=1&pid=ImgDetMain" alt="Canned Salmon" class="service-img">
+                </div>
+                <div class="service-content">
+                    <h3>Canned Salmon</h3>
+                    <p>Our premium canned salmon is rich in flavor and packed with nutrients. Perfect for quick and healthy meals.</p>
+                    <div class="btn-container">
+                        <a href="canned-salmon.html" class="btn">Learn More</a>
+                        <a href="https://www.example.com/canned-salmon" target="_blank" class="btn btn-secondary">Visit Website</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</section>
+<section id="animatedSection" 
+         style="background: linear-gradient(135deg, #1a2a6c, #12bcde, #04364a); 
+                color: #ffffff; 
+                padding: 70px 30px; 
+                text-align: center; 
+                border-radius: 25px; 
+                font-family: 'Poppins', sans-serif; 
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); 
+                max-width: 850px; 
+                margin: 50px auto; 
+                overflow: hidden; 
+                position: relative;">
+                
+    <div style="position: relative; z-index: 2;">
+        <h2 id="animatedHeading"
+            style="font-size: 3rem; 
+                   font-weight: 700; 
+                   margin-bottom: 20px; 
+                   opacity: 0; 
+                   transform: translateY(-50px); 
+                   animation: slideDownIn 1.5s ease-out forwards;">
+            Do You Like  Our Services?
+        </h2>
+        
+        <p id="animatedParagraph"
+           style="font-size: 1.5rem; 
+                  margin-bottom: 35px; 
+                  color: #e9e9e9; 
+                  line-height: 1.6; 
+                  opacity: 0; 
+                  transform: translateX(50px); 
+                  animation: slideInFromRight 1.5s ease-out forwards; 
+                  animation-delay: 0.5s;">
+            We’re ready to assist you anytime. Connect with us now and experience excellence.
+        </p>
+        
+        <a href="tel:0113452312" 
+           id="animatedButton"
+           style="display: inline-block; 
+                  background: linear-gradient(90deg, #021a5d, #46052d); 
+                  color: #ffffff; 
+                  padding: 15px 60px; 
+                  border-radius: 60px; 
+                  font-size: 1.4rem; 
+                  font-weight: bold; 
+                  text-decoration: none; 
+                  box-shadow: 0 8px 25px rgba(255, 50, 50, 0.4); 
+                  opacity: 0; 
+                  transform: translateY(50px); 
+                  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                  animation: slideUpIn 1.5s ease-out forwards; 
+                  animation-delay: 1s;">
+            <i class="fa fa-phone" style="margin-right: 12px;"></i> Call Now - 011 3452312
+        </a>
+    </div>
+
+    <!-- Background circles animation -->
+    <div style="position: absolute; top: 0; left: -100px; width: 200px; height: 200px; 
+                background: rgba(255, 255, 255, 0.2); 
+                border-radius: 50%; 
+                animation: float 6s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -50px; right: -80px; width: 250px; height: 250px; 
+                background: rgba(255, 255, 255, 0.15); 
+                border-radius: 50%; 
+                animation: float 8s ease-in-out infinite reverse;"></div>
+</section>
+
+<style>
+    /* Animations */
+    @keyframes slideDownIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideUpIn {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Float effect for background elements */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(20px);
+        }
+    }
+
+    /* Button hover effect */
+    #animatedButton:hover {
+        background: linear-gradient(90deg, #d8a89f, #ff416c);
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(255, 70, 50, 0.6);
+    }
+
+    /* Button active effect */
+    #animatedButton:active {
+        background: linear-gradient(90deg, #e63950, #ff4b2b);
+        transform: scale(0.97);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<script>
+    // Optional: Button click functionality
+    document.getElementById('animatedButton').addEventListener('click', function() {
+        alert('We’re excited to help you!');
+    });
+</script>
+
+
+
+<!-- Partners Section -->
+<!-- Partners Section with Auto-Scrolling -->
+<!-- Partners Video-Like Section with Enhanced Design -->
+<section class="enhanced-partners-section" style="background: linear-gradient(135deg, #f3f4f6, #e2e8f0); padding: 50px 0;">
+    <h2 class="partners-heading" style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 2.5em; color: #1a202c; margin-bottom: 30px;">
+        Our Valued Partners
+    </h2>
+
+    <div class="enhanced-slider-wrapper" style="position: relative; overflow: hidden; width: 100%;">
+        <!-- Video-Like Scrolling Partner Logos -->
+        <div class="enhanced-partner-slider" style="display: flex; gap: 40px; animation: scroll-left 20s linear infinite;">
+            <!-- Partner 1 -->
+            <div class="partner-logo">
+                <img src="https://th.bing.com/th/id/OIP.cVWmwQz-OVf-sKMGmS5F3gHaHa?rs=1&pid=ImgDetMain" alt="Partner 1" />
+            </div>
+            <!-- Partner 2 -->
+            <div class="partner-logo">
+                <img src="https://th.bing.com/th/id/OIP.FpzDtE-WRekMq8NNg1lYpAAAAA?w=235&h=120&rs=1&pid=ImgDetMain" alt="Partner 2" />
+            </div>
+            <!-- Partner 3 -->
+            <div class="partner-logo">
+                <img src="zineth.png" alt="Partner 3" />
+            </div>
+            <!-- Partner 3 -->
+            <div class="partner-logo">
+                <img src="z.png" alt="Partner 3" />
+            </div>
+            <!-- Repeat Logos for Continuous Scroll -->
+            <div class="partner-logo">
+                <img src="https://th.bing.com/th/id/OIP.cVWmwQz-OVf-sKMGmS5F3gHaHa?rs=1&pid=ImgDetMain" alt="Partner 1" />
+            </div>
+            <div class="partner-logo">
+                <img src="https://th.bing.com/th/id/OIP.FpzDtE-WRekMq8NNg1lYpAAAAA?w=235&h=120&rs=1&pid=ImgDetMain" alt="Partner 2" />
+            </div>
+            <div class="partner-logo">
+                <img src="zineth.png" alt="Partner 3" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS Animations for Enhanced Scrolling and Design -->
+<style>
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .enhanced-partners-section {
+        background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+        padding: 50px 0;
+    }
+
+    .partners-heading {
+        font-size: 2.5em;
+        color: #1a202c;
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .enhanced-slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .enhanced-partner-slider {
+        display: flex;
+        gap: 40px;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    .partner-logo {
+        min-width: 200px;
+        max-width: 200px;
+        height: 200px; /* Make all logos of uniform height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    .partner-logo img {
+        max-width: 100%;   /* Ensure the logos don't exceed the container */
+        max-height: 100%;  /* Ensure uniform height for all logos */
+        object-fit: contain; /* Fit within the box without distorting */
+    }
+</style>
+
+
+
+
+  <style>
+    /* Parallax Background */
+    #unique-achievements {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif; /* Modern font */
+    }
+  
+    .parallax-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  
+    #background-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9);
+    }
+  
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 255, 255, 0.2) 100%);
+      z-index: 1;
+    }
+  
+    /* Content Container */
+    .content-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 40px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2); /* Add a dark background */
+      border-radius: 12px; /* Add a rounded corner */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    }
+  
+    .section-title h2 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 40px;
+      color: #ffffff;
+      animation: titleGlow 2s infinite alternate;
+    }
+  
+    @keyframes titleGlow {
+      from {
+        text-shadow: 0 0 10px #042b2b, 0 0 20px #014e4e, 0 0 30px #99f1f1;
+      }
+      to {
+        text-shadow: 0 0 20px #072b2b, 0 0 40px #016262, 0 0 60px #034a4a;
+      }
+    }
+  
+    /* Stats Section */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    }
+  
+    .stat-item {
+      position: relative;
+      background: rgba(255, 255,  255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+  
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: #34c759;
+      transition: width 1s ease-out;
+    }
+  
+    .stat-label {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+  </style>
+  
+  <script>
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach((item) => {
+      const statNumber = item.querySelector('.stat-number');
+      const progress = item.querySelector('.progress');
+      const targetNumber = parseInt(statNumber.getAttribute('data-number'));
+      let currentNumber = 0;
+  
+      setInterval(() => {
+        if (currentNumber < targetNumber) {
+          currentNumber++;
+          statNumber.textContent = currentNumber;
+          progress.style.width = `${(currentNumber / targetNumber) * 100}%`;
+        }
+      }, 20);
+    });
+  </script>
+      
+   <!-- Online Chat Button -->
+<button class="online-chat-btn" onclick="openWhatsApp()">
+    <i class="fab fa-whatsapp"></i> Chat with us
+</button>
+
+<!-- Inquiry Form Section -->
+<div id="inquirySection" class="inquiry-section" style="display: none;">
+    <div class="inquiry-form-container">
+        <button class="close-btn" onclick="toggleInquirySection()">
+            <i class="fas fa-times"></i> <!-- Close Icon -->
+        </button>
+        <h3>Send Us an Inquiry</h3>
+        <form id="inquiry-form" class="inquiry-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i> <!-- User Icon -->
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-comment"></i> <!-- Message Icon -->
+                <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <button type="button" onclick="submitForm()">
+                <i class="fas fa-paper-plane"></i> Submit <!-- Submit Icon -->
+            </button>
+        </form>
+        <div id="loading" style="display: none;" class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Submitting your inquiry...
+        </div>
+        <div id="message" style="display: none;" class="message"></div>
+    </div>
+</div>
+
+<script>
+    // Toggle Inquiry Section visibility
+    function toggleInquirySection() {
+        const inquirySection = document.getElementById('inquirySection');
+        inquirySection.style.display = inquirySection.style.display === 'none' || inquirySection.style.display === '' ? 'flex' : 'none';
+    }
+
+    // Submit Inquiry Form
+    function submitForm() {
+        const form = document.getElementById('inquiry-form');
+        const loading = document.getElementById('loading');
+        const message = document.getElementById('message');
+        
+        // Hide form, show loading spinner
+        form.style.display = 'none';
+        loading.style.display = 'block';
+        
+        // Simulate form submission with a delay
+        setTimeout(() => {
+            loading.style.display = 'none'; // Hide loading spinner
+            message.className = 'message success';
+            message.textContent = 'Your inquiry has been submitted successfully!';
+            message.style.display = 'block'; // Show success message
+        }, 2000); // Simulate 2 seconds of submission delay
+    }
+
+    // WhatsApp Chat Button Functionality
+    function openWhatsApp() {
+        const phoneNumber = '94767930889'; // Include country code without the "+"
+        const message = 'Hello, I would like to inquire about your product.';
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+</script>
+
+<!-- CSS Styling -->
+<style>
+    /* Online Chat Button */
+    .online-chat-btn {
+        background-color: #25d366;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        font-size: 16px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .online-chat-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Inquiry Section */
+    .inquiry-section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .inquiry-form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        position: relative;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .input-group i {
+        color: #007bff;
+    }
+
+    .inquiry-form input,
+    .inquiry-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .inquiry-form button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .inquiry-form button:hover {
+        background-color: #0056b3;
+    }
+
+    .loading {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .message.success {
+        color: green;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Close Button */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #aaa;
+    }
+
+    .close-btn:hover {
+        color: #000;
+    }
+
+    /* Success message */
+    .message {
+        display: none;
+        font-size: 16px;
+    }
+
+    .message.success {
+        color: green;
+    }
+</style>
+
+<!-- Compact Footer -->
+<footer class="new-style">
+    <div class="footer-container">
+        <!-- Address Section -->
+        <div class="footer-address">
+            <h4>Address</h4>
+            <p><i class="fas fa-map-marker-alt"></i> 211/10, Veluwana Place, </p><p> Colombo 09,</p></p> Sri Lanka</p>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:0117681494">011 768 1494</a></p>
+            <p><i class="fab fa-whatsapp"></i>  <a href="https://wa.me/947467930889" target="_blank">074 679 30889</a></p>
+            <p><i class="fas fa-envelope"></i>  <a href="mailto:info@company.com">info@bartleetagro.com</a></p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2024 BC Agro • All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- CSS for Compact Footer Layout with Separate Address -->
+<style>
+    .new-style {
+        background-color: #010359;
+        padding: 15px 10px; /* Reduced padding for a compact layout */
+        color: #fff;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .new-style .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .new-style .footer-address,
+    .new-style .footer-contact,
+    .new-style .footer-links,
+    .new-style .footer-social {
+        padding: 10px; /* Reduced padding for sections */
+        flex: 1;
+        margin-right: 10px; /* Space between sections */
+        min-width: 150px;
+    }
+
+    .new-style .footer-social {
+        margin-right: 0; /* Remove right margin for the last section */
+    }
+
+    h4 {
+        margin-bottom: 5px; /* Reduced margin for headings */
+        font-size: 1.1em; /* Slightly smaller font size */
+        color: #1abc9c;
+    }
+
+    .new-style .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .new-style .footer-links li {
+        margin-bottom: 5px; /* Reduced spacing between links */
+    }
+
+    .new-style .footer-links a {
+        color: rgb(255, 249, 249);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.9em; /* Slightly smaller text for links */
+    }
+
+    .new-style .footer-links a:hover {
+        color: #1abc9c;
+    }
+
+    .social-icons a {
+        color: white;
+        margin-right: 10px; /* Reduced margin for icons */
+        font-size: 18px; /* Slightly smaller icon size */
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #1abc9c;
+    }
+
+    .footer-bottom {
+       
+        padding: 8px 5px; /* Reduced padding for footer bottom */
+        text-align: center;
+        margin-top: 10px; /* Reduced top margin */
+    }
+
+    .footer-bottom p {
+        font-size: 0.8em; /* Smaller font size */
+        color: rgb(255, 255, 255);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .new-style .footer-container {
+            flex-direction: column; /* Stack sections vertically on smaller screens */
+            text-align: center;
+        }
+
+        .new-style .footer-address,
+        .new-style .footer-contact,
+        .new-style .footer-links,
+        .new-style .footer-social {
+            margin-right: 0;
+            margin-bottom: 10px; /* Add space between stacked sections */
+        }
+    }
+</style>
+
+<!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</body>
+</html>
